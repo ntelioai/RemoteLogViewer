@@ -1,0 +1,56 @@
+/*
+ * Run this code to test if the Logging is working, you should open the ../viewer/index.html on the client to view the output
+ */
+
+// Import library
+var logger = require("../Logger").Logger(this, true)
+
+// Send a number of messages
+for (var i=0; i<10; i++) logger.log(i)
+
+//
+// Test the debug level filtering
+//
+logger.log("testing level filtering.")
+
+function debug() {
+  console.log("------------------")
+  logger.debug("DEBUG")
+  logger.info("INFO")
+  logger.warn("WARN")
+  logger.error("ERROR")
+}
+
+// Set logging level
+logger.setLevel("DEBUG")
+debug()
+
+logger.setLevel("INFO")
+debug()
+
+logger.setLevel("WARN")
+debug()
+
+logger.setLevel("ERROR")
+debug()
+
+//
+// Test logging objects
+//
+logger.setLevel("DEBUG")
+var obj = {
+  a: 1,
+  'b': 'foo',
+  c: [false, 'false', null, 'null', {
+    d: {
+      e: 1.3e5,
+      f: '1.3e5'
+    }
+  }]
+}
+
+logger.log(obj)
+
+logger.application("someComponent", {params: {a:1, b:2, c:"asdasd"}})
+
+//logger.log(request)

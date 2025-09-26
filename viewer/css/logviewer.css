@@ -1,0 +1,214 @@
+.LogViewer {
+  /* background-color:#fafafa; */
+
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 0.8em;
+
+  padding: .3em; 
+
+  white-space: pre-wrap;       /* CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */ 
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* IE 5.5+ */
+
+  /* Add these properties for scrolling */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.LogViewer .timestamp {color: #6c6b6b; margin-right: 15px;}
+.LogViewer .debug {color: black}
+.LogViewer .info {color: #5274aa;}
+.LogViewer .warn {color: red}
+.LogViewer .error {color: red}
+.LogViewer .application {color: green}
+
+.LogViewer .level {
+  color: rgb(28, 132, 218);
+  width: 90px; 
+  display:inline-block;
+}
+
+.LogViewer .message {
+  padding: .2em;
+  /* border: 1px solid #fffbb7; */
+  background-color: #faf5e272;
+  border-radius: .6em;
+  margin-bottom: 0.4em;
+}
+
+.LogViewer .string {
+  color: green;
+}
+
+.LogViewer .number {
+  color: darkorange;
+}
+
+.LogViewer .boolean {
+  color: blue;
+}
+
+.LogViewer .null {
+  color: magenta;
+}
+
+.LogViewer .key {
+  color: blue;
+}
+
+
+.LogViewer table {
+  margin: 10px;
+}
+
+.LogViewer table {
+  margin: 10px;
+}
+
+.LogViewer td:nth-child(2) {
+  padding-left: 5px;
+}
+
+/* OpenAI: start */
+
+.LogViewer .openAI .widget {
+  border: 1px solid grey;
+}
+
+
+.LogViewer .question {
+  color: blue;
+  background-color: transparent;
+}
+
+.LogViewer .model {
+  background-color: transparent;
+}
+
+.LogViewer .template {
+  background-color: transparent;
+  color: grey;
+  max-height: 6em;
+  overflow-y: auto;
+}
+
+.LogViewer .dialog {
+  background-color: transparent;
+  color: grey;
+  max-height: 6em;
+  overflow-y: auto;
+}
+
+.LogViewer .answer {
+  color: blue;
+  background-color: transparent;
+}
+
+.LogViewer .performance {
+  color: orange;
+  background-color: transparent;
+}
+
+
+/* OpenAI: end */
+
+/* Log Viewer Interface Styles */
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 100%!important;
+    margin: 0px!important;
+    padding: 0px!important;
+}
+
+.content-div {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+}
+
+.log-selector-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f0f0f0;
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.log-selector-label {
+    margin-left: 0px;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+
+h6 {
+    font-size: 0.8em;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.filter-option {
+    font-size: 0.8em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.selector {
+    position: relative;
+    top: -.2em;
+    margin-right: 20px;
+}
+
+#clearButton {
+    position: relative;
+    top: -.2em;
+    font-size: 0.8em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.script-filter {
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#scriptFilter {
+    width: 200px;
+    padding: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 0.8em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#authToken {
+    font-size: 0.8em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.selectpicker {
+    font-size: 0.8em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

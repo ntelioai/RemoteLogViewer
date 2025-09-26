@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+		<link rel="icon" href="https://www.ntelio.ai/website/resources/favicon.ico" type="image/x-icon">
+
+        <title>ntelio realtime server log viewer</title>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js"></script>
+ 
+        <link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+        
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" rel="stylesheet">
+             
+        <!-- Logger files -->
+        <script type="module" src="./viewer/viewer.js"></script>
+        <link href="./viewer/css/logviewer.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div id="parameters" class="d-flex justify-content-between align-items-center" style="background-color: #f0f0f0; padding: 10px 5px 5px 5px;">
+                <div class="d-flex align-items-center">
+                    <h6 class="log-selector-label">Log Levels:</h6>
+                    <div class="selector">
+                        <select class="selectpicker" multiple data-live-search="true" title="Choose log levels">
+                            <option value="debug">debug</option>
+                            <option value="info">info</option>
+                            <option value="warn">warn</option>
+                            <option value="error">error</option>
+                            <option value="application">application</option>
+                        </select> 
+                    </div>
+                    <button id="clearButton" class="btn btn-secondary btn-sm">Clear</button>
+                </div>
+    
+                <div class="d-flex align-items-center">
+                    <span class="script-filter">Token:</span>
+                    <input type="text" id="authToken" placeholder="Enter auth token" style="width: 200px; padding: 5px; margin-left: 20px; margin-right: 20px;">
+                </div>
+    
+                <div class="d-flex align-items-center">
+                    <span class="script-filter">Script:</span>
+                    <input type="text" id="scriptFilter">
+                </div>    
+            </div>
+
+            <div id="logMessages" class="content-div">
+            </div>
+        </div>
+
+    </body>
+</html>
